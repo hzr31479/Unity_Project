@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI; //Nav Mesh Agent 
+using UnityEngine.AI;
 
 public class WaypointPatrol : MonoBehaviour
 {

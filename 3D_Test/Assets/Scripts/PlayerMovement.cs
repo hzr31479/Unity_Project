@@ -19,12 +19,21 @@ public class PlayerMovement : MonoBehaviour
         m_AudioSource = GetComponent<AudioSource> ();
     }
 
+    void ExitGame()
+        {
+            Application.Quit();
+        }
+
     void FixedUpdate ()
-    {
+    {   
+        //结束游戏
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+                ExitGame ();
+            }
+
         float horizontal = Input.GetAxis ("Horizontal");
         float vertical = Input.GetAxis ("Vertical");
-        
-        m_Movement.Set(horizontal, 0f, vertical);
+        m_Movement.Set(-horizontal, 0f, -vertical);
         m_Movement.Normalize ();
 
         bool hasHorizontalInput = !Mathf.Approximately (horizontal, 0f);
